@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="Elo">
+<head>
+  <meta charset="utf-8">
+  <title>Elo rating</title>
+</head>
+<body ng-controller="AppCtrl">
+  <div>
+    <label>
+      My current rating:
+      <input type="text" ng-model="myRating" ng-change="calculateNewRating()">
+    </label>
+  </div>
+  <div>
+    <label>
+      Opponent's rating:
+      <input type="text" ng-model="opponentRating" ng-change="calculateNewRating()">
+    </label>
+  </div>
+  <div>
+    Game result:
+    <div>
+      <label>
+        <input type="radio" value="1" ng-model="gameResult" ng-change="calculateNewRating()">
+        I won
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="radio" value="0" ng-model="gameResult" ng-change="calculateNewRating()">
+        I lost
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="radio" value="0.5" ng-model="gameResult" ng-change="calculateNewRating()">
+        Draw
+      </label>
+    </div>
+  </div>
+  <div>
+    My new rating: {{ newRating }}
+  </div>
+
+  <script src="angular.min.js"></script>
+  <script src="elo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
