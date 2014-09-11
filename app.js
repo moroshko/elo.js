@@ -5,6 +5,7 @@ angular.module('App', ['Elo']).controller('AppCtrl', function($scope, Elo) {
 
   $scope.calculateNewRating = function() {
     $scope.newRating = Elo.getNewRating(+$scope.myRating, +$scope.opponentRating, +$scope.gameResult);
+    $scope.ratingDelta = Elo.getRatingDelta(+$scope.myRating, +$scope.opponentRating, +$scope.gameResult);
   };
 
   $scope.calculateNewRating();
